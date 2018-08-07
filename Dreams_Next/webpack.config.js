@@ -10,19 +10,19 @@ const conf = {
 	},
 	module:{
 		rules:[
-				{
-				 test: /\.js$/,
-				 loader: 'babel-loader',
-				 //exlude: 'node_module'
-				},
-				{
-		        test: /\.css$/,
-		        use: ExtractTextPlugin.extract({
-		                 fallback: "style-loader",
-		                 use: "css-loader"
-		        		})
-		        }
-			  ]
+		   {
+			test: /\.js$/,
+			loader: 'babel-loader',
+			//exlude: 'node_module'
+	       },
+		{
+		test: /\.css$/,
+			use: ExtractTextPlugin.extract({
+			fallback: "style-loader",
+			use: "css-loader"
+			})
+		  }
+		]
 	},
 	devServer : {
 		contentBase: './src',
@@ -30,21 +30,21 @@ const conf = {
 		overlay: true
 	},
 	plugins: [
-	    new ExtractTextPlugin('css/style.css'),
-		new HtmlWebpackPlugin({ 
-		      hash: true,
-		      template: './src/index.html',
-		      filename: 'index.html'
-    })
-		
-	]
-};
+			new ExtractTextPlugin('css/style.css'),
+			new HtmlWebpackPlugin({ 
+				hash: true,
+				template: './src/index.html',
+				filename: 'index.html'
+			})
+
+		]
+	};
 
 module.exports = (env, options) => {
 	let produc = options.mode === 'productions';
-	conf.devtool = produc 
-				   ? false
-				   : 'eval-source';
-	return conf;
+			conf.devtool = produc 
+			? false
+			: 'eval-source';
+			return conf;
 }
 /**/
