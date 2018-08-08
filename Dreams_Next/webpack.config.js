@@ -32,9 +32,19 @@ const conf = {
 	plugins: [
 			new ExtractTextPlugin('css/style.css'),
 			new HtmlWebpackPlugin({ 
-				hash: true,
 				template: './src/index.html',
-				filename: 'index.html'
+      filename: './index.html',
+      hash: false,
+      inject: true,
+      compile: true,
+      favicon: false,
+      minify: false,
+      cache: true,
+      showErrors: true,
+      //chunks: 'all',
+      //excludeChunks: [],
+      title: 'App',
+      xhtml: true
 			})
 
 		]
