@@ -1,12 +1,12 @@
 window.addEventListener("DOMContentLoaded", beauty);
-	let progressBar, contentText, viewPort, displayScroll, input;
+	let progressBar, contentText, viewPort, displayCount, input;
 function beauty(){
 	 progressBar    = document.querySelector(".progressBar > span");
 	 contentText    = document.querySelector(".container");
 	 viewPort       = document.querySelector(".wrapper");
-	 displayScroll  = document.querySelector(".monitor");
+	 displayCount   = document.querySelector(".monitor");
 	 input          = document.querySelector("input[type='color']");
-	 displayScroll.innerHTML = contentText.scrollTop + " px";
+	 displayCount.innerHTML = contentText.scrollTop + " px";
 	beast();
 	window.addEventListener("resize", beast);
 
@@ -14,7 +14,7 @@ function beauty(){
 				
 				let color                 = input.value;
 				viewPort.style.background = color;
-				displayScroll.style.color = color;
+				displayCount.style.color  = color;
 			});
 }
 
@@ -25,7 +25,7 @@ function beast(){
 
 	contentText.addEventListener("scroll", ()=>{
 		progressBar.style.width = contentText.scrollTop / differ + "%";
-		displayScroll.innerHTML = contentText.scrollTop + " px";
+		displayCount.innerHTML = contentText.scrollTop + " px";
 	});
 
 }
