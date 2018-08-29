@@ -30,12 +30,27 @@ body{
 	background: #ee43ee;
 }
 .progressBar{
+	position: relative;
 	width: 100%;
 	height: 15px;
 	margin: 0;
 	padding: 0;	
 }
-.progressBar > span{
+.countMonitor{
+	color: white;
+	font-weight: bold;
+	font-family: sans-serif;
+	display: inline-block;
+	position: absolute;
+	z-index: 3;
+	width: 100px;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.progressBar > .progressBar{
 	display: inline-block;
 	height: 100%;
 	background: repeating-linear-gradient(
@@ -44,8 +59,8 @@ body{
 	  orange 10px,
 	  black 10px, 
 	  black 20px, 
-	  white 20px, 
-	  white 30px );
+	  red 20px, 
+	  red 30px );
 	    
 }
 .container {
@@ -60,7 +75,7 @@ body{
 	align-self: flex-start;
 	margin-left: 50px;
 	width: 200px;
-	height: 80px;
+	min-height: 80px;
 	background: #777;
 }
 .showPosition .monitor{
