@@ -50,6 +50,7 @@ body{
 	left: 50%;
 	transform: translateX(-50%);
 }
+
 .progressBar > .progressIndicator{
 	display: inline-block;
 	height: 100%;
